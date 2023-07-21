@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "io.h": "c",
+        "sim_vcd_file.h": "c",
+        "stdlib.h": "c"
+    }
+}
