@@ -1,0 +1,5 @@
+# Run :
+## UART send data test
+simavr -f 8000000 -m atmega32 UART_send.elf
+## UART receive data test
+bash ./run_test.sh

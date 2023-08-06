@@ -2,6 +2,25 @@
     "files.associations": {
         "io.h": "c",
         "sim_vcd_file.h": "c",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "delay.h": "c",
+        "iom8.h": "c",
+        "avr_timer.h": "c",
+        "avr_uart.h": "c",
+        "sim_elf.h": "c",
+        "sim_avr.h": "c",
+        "typeinfo": "c",
+        "avr_ioport.h": "c",
+        "avr_spi.h": "c",
+        "avr_twi.h": "c",
+        "interrupt.h": "c",
+        "fifo_declare.h": "c",
+        "eeprom.h": "c",
+        "avr_mcu_section.h": "c",
+        "sleep.h": "c",
+        "sim_megax.h": "c",
+        "sim_core_declare.h": "c",
+        "unistd.h": "c",
+        "stdio.h": "c"
     }
 }

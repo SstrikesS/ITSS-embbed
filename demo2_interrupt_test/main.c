@@ -42,10 +42,8 @@ int main(int argc, char *argv[])
 									 IOPORT_IRQ_PIN3),
 					   1, "PD3");
 
-
 	// Kết nối ngắt INT0 và INT1 với hàm xử lý ngắt tương ứng
 	avr_irq_t *int0_irq = avr_io_getirq(avr, AVR_IOCTL_IOPORT_GETIRQ('D'), IOPORT_IRQ_PIN2);
-
 	avr_irq_t *int1_irq = avr_io_getirq(avr, AVR_IOCTL_IOPORT_GETIRQ('D'), IOPORT_IRQ_PIN3);
 
 	avr_vcd_start(&vcd_file);
@@ -54,18 +52,20 @@ int main(int argc, char *argv[])
 		avr_run(avr);
 
 		if (avr->cycle > 1000000)
-		{ 
+		{
 			break;
 		}
 
-		if (avr->cycle % 3000 == 0){
+		if (avr->cycle % 3000 == 0)
+		{
 			avr_raise_irq(int1_irq, 1);
-            avr_raise_irq(int1_irq, 0); 
-
-		}else if (avr->cycle % 1000 == 0) { 
-            avr_raise_irq(int0_irq, 1);
-            avr_raise_irq(int0_irq, 0); 
-        }
+			avr_raise_irq(int1_irq, 0);
+		}
+		else if (avr->cycle % 1000 == 0)
+		{
+			avr_raise_irq(int0_irq, 1);
+			avr_raise_irq(int0_irq, 0);
+		}
 	}
 
 	avr_vcd_stop(&vcd_file);
